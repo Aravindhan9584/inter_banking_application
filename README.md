@@ -7,7 +7,7 @@ A single-screen React app that shows savings accounts, credit cards, loans and w
 ```bash
 npm install
 npm run dev      # http://localhost:5173
-npm run build    # production build into dist/
+npm run build  
 ```
 
 Requires Node 18+.
@@ -18,26 +18,6 @@ Requires Node 18+.
 - **Vite** – fast dev server and build with almost no configuration.
 - **Plain CSS with custom properties** – no UI library, so the layout and styling decisions are visible in the code. Responsive via CSS Grid `auto-fill` (1 column on phones, up to 4 on desktop).
 - **Hard-coded data** – all products live in one file, `src/data/products.js`. Components get them through `productService.js`, so switching to a real API later changes only that one file.
-
-## Project structure
-
-```
-src/
-  data/products.js            HARD-CODED product data (edit products here)
-  services/productService.js  Data access – returns the products to the app
-  hooks/useProducts.js        Loading / error / data state
-  config/productConfig.js     Category & status metadata (labels, icons, colours)
-  utils/filterProducts.js     Pure filtering & counting logic
-  utils/format.js             Currency / percent / date formatting
-  components/
-    CategoryTabs.jsx          Switch between product categories
-    FilterBar.jsx             Search box + status filter
-    ProductGrid.jsx           Responsive grid + empty state
-    ProductCard.jsx           One product tile
-    StatusBadge.jsx           Coloured status pill
-    ProductModal.jsx          Popup opened by the card button
-  App.jsx                     Composes the screen and holds filter state
-```
 
 ## Separation of data and UI
 
